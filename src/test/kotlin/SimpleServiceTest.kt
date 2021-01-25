@@ -10,13 +10,13 @@ class SimpleServiceTest : DescribeSpec() {
 
   init {
     describe("stuff") {
-      it("should return -1 for missing a") {
+      it("should return -1 for missing a - relaxed mode") {
         val result = simpleService.stuff()
 
         result shouldBe -1
       }
 
-      it("should return -1 for missing a") {
+      it("should return -1 for missing a - without relaxed mode") {
         every { simpleDataClassProducer.produce() } returns SimpleDataClass(a = null)
         val result = simpleService.stuff()
 
