@@ -23,7 +23,7 @@ class SimpleServiceTest : DescribeSpec() {
         result shouldBe -1
       }
 
-      it("should return 1 for missing a") {
+      it("should return 1") {
         every { simpleDataClassProducer.produce() } returns SimpleDataClass(a = 2)
         val result = simpleService.stuff()
 
